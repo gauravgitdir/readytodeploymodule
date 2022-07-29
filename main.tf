@@ -50,10 +50,6 @@ resource "aws_route53_record" "example" {
   ]
 }
 
-resource "aws_secretsmanager_secret" "secret-key-aws" {
-  name                = "Secret-key"
-}
-
 locals {
   instance_count = var.instance_count
 }
