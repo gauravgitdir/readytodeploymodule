@@ -35,3 +35,5 @@ dns_name = " your DNS"
 
 type = "type"
 
+region  = "your region"
+
