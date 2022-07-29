@@ -3,6 +3,8 @@
 #---------------------------------------------------------------------------------------------------------
 account_id = your account id
 
+secret_key = "your secret key"
+
 instance_count = instance count number
 
 instance_class = "instance class type"
