@@ -1,35 +1,35 @@
 #---------------------------------------------------------------------------------------------------------
 # This is called the variable file from where we pass the variable values to the main.tf terraform file.
 #---------------------------------------------------------------------------------------------------------
-account_id = 410533792414
-instance_count = 2
-instance_class = "db.t4g.large"
-db_cluster_instance_name = "yashinsta"
+account_id = your account id
 
-db_engine = "aurora"
+instance_count = instance count number
 
-db_name = "yashdb"
+instance_class = "instance class type"
 
-db_security_group_name = "sg-001a06a7ba5ed16d7"
+db_cluster_instance_name = "cluster instance name"
 
+db_engine = "engine name"
 
-environment = "qual"
+db_name = "database name"
 
-instance_count = 2
+db_security_group_name = "security group id"
 
-vpc_name = "defaultvpc"
+environment = "your enviornment"
 
-freeable_threshold = 2
+vpc_name = "your vpc name"
 
-trans_wrap_threshold = 3
+freeable_threshold = threshold number
 
-cidr_block = "10.0.0.0/16"
+trans_wrap_threshold =  threshold number
 
-instance_tenancy = "default"
+cidr_block = "cidr block"
 
-cidr_block_vpc = "10.0.1.0/24"
+instance_tenancy = " tenency of instance"
 
-dns_name = "test.example.com"
+cidr_block_vpc = "vpc cidr block"
 
-type = "NS"
+dns_name = " your DNS"
+
+type = "type"
 
