@@ -36,3 +36,11 @@ dns_name = " your DNS"
 type = "type"
 
 region  = "your region"
+
+audit_auth_namespace = "your namespace"
+
+instance_class = "instance class"
+
+component = "component name"
+
+
