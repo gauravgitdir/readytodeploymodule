@@ -5,6 +5,8 @@ account_id = your account id
 
 instance_count = instance count number
 
+secret_key = "your secret key"
+
 instance_class = "instance class type"
 
 db_cluster_instance_name = "cluster instance name"
