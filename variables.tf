@@ -2,6 +2,19 @@ variable "region" {
 type = string
 }
 
+variable "audit_auth_namespace" {
+type = string
+}
+
+variable "instance_class" {
+type = string
+}
+
+variable "component" {
+type = string
+}
+
+
 
 variable "db_engine" {
 type = string
