@@ -18,6 +18,19 @@ resource "aws_subnet" "main" {
   }
 }
 
+resource "random_password" "rds_password" {
+  length = 16
+  special = false
+}
+
+resource "aws_secretsmanager_secret" "examplerdssecret" {
+  name = var.secret_key
+}
+resource "aws_secretsmanager_secret_version" "secretValue" {
+  secret_id     = aws_secretsmanager_secret.examplerdssecret.id
+  secret_string = random_password.rds_password.result
+}
+
 resource "aws_route53_zone" "example" {
   name = var.dns_name
 }
