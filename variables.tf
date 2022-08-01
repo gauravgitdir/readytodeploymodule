@@ -101,3 +101,20 @@ variable "secret_key" {
 type = string
 }
 
+variable "hosted_Zone_Name" {
+type = string
+}
+
+variable "hosted_record-set" {
+type =  string
+}
+
+variable "route53_record_ttl" {
+type = number
+}
+
+variable "db_event_subscription_name" {
+type = list(string)
+}
+
+
