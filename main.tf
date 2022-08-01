@@ -31,6 +31,20 @@ resource "aws_secretsmanager_secret_version" "secretValue" {
   secret_string = random_password.rds_password.result
 }
 
+/*data "aws_route53_zone" "sa_route53_zone_existing" {
+  name         = var.hosted_Zone_Name
+  private_zone = true
+}
+# record set for rds-postgres created in existing domain
+resource "aws_route53_record" "sa_example-rds-recordSet" {
+  zone_id = data.aws_route53_zone.sa_route53_zone_existing.zone_id
+  name    = var.hosted_record-set
+  type    = "CNAME"
+  ttl     = var.route53_record_ttl
+  records = [aws_rds_cluster.example-postgresql-cluster.endpoint]
+}
+/*
+
 resource "aws_route53_zone" "example" {
   name = var.dns_name
 }
@@ -126,4 +140,20 @@ resource "aws_cloudwatch_metric_alarm" "sa_example_cpu_utilization" {
   comparison_operator = "GreaterThanOrEqualToThreshold"
 }
 
+resource "aws_db_event_subscription" "sa_example_DBEventSubscription" {
+  count = local.instance_count
+  enabled          = true
+  event_categories = ["configuration change", "failure","deletion","availability","backup","failover","maintenance","notification","read replica","recovery","low storage"]
+  name             = var.db_event_subscription_name[count.index]
+  sns_topic        = aws_sns_topic.example-sns-topic.arn
+  source_ids       = [aws_rds_cluster_instance.example-postgresql-instance.*.id[count.index]]
+  source_type      = "db-instance"
+
+  tags = {
+    Name = var.db_event_subscription_name[count.index]
+    component = var.component
+  }
+
+  depends_on = [aws_sns_topic.example-sns-topic]
+}
 
