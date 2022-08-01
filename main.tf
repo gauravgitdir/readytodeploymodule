@@ -43,7 +43,7 @@ resource "aws_route53_record" "sa_example-rds-recordSet" {
   ttl     = var.route53_record_ttl
   records = [aws_rds_cluster.example-postgresql-cluster.endpoint]
 }
-/*
+*/
 
 resource "aws_route53_zone" "example" {
   name = var.dns_name
