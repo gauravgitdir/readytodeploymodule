@@ -283,6 +283,26 @@ resource "aws_cloudwatch_metric_alarm" "sa_example_auth_audit_alarm" {
   }
 
 }
+
+
+# SNS topic
+resource "aws_sns_topic" "example-sns-topic" {
+  name = var.topic
+  display_name = var.display_name
+  provisioner "local-exec" {
+    command = "sh resources/sns_subscription.sh"
+    environment = {
+      sns_arn = self.arn
+      sns_emails = var.email_address
+    }
+  }
+  tags = {
+    Name = var.topic
+    component = var.component
+  }
+}
+
+
 */
 /*
   resource "aws_db_parameter_group" "examplepostgresql-instance-param-grp" {
