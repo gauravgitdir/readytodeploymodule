@@ -43,6 +43,17 @@ instance_class = "instance class"
 
 component = "component name"
 
+
+display_name = "name"
+
+topic = "topic name"
+
+audit_auth_namespace = "namespace name"
+
+sns_emails = "emai id"
+
+sns_arn = "sns arn"
+
 /*
   #---------------------------------------------------------------------------------------------------------
 # This is called the variable file from where we pass the variable values to the main.tf terraform file.
